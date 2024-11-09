@@ -12,14 +12,16 @@ const size = { width: window.innerWidth, height: window.innerHeight };
 
 const director = new THREE.WebGLRenderer({ canvas: character });
 director.setSize(size.width, size.height);
+director.setClearColor(0x000000, 0); // set background color as transparent
 
 /* -----> 02 Scene <----- */
 const scene = new THREE.Scene();
+scene.background = null;
 
 // Set up the scene, camera, and director
 
 // Set up the camera
-const camera = new THREE.PerspectiveCamera(60, size.width / size.height);
+const camera = new THREE.PerspectiveCamera(75, size.width / size.height);
 camera.position.z = 40; // Adjust camera position closer to the object
 
 // Add lighting to the scene
